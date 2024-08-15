@@ -1,0 +1,27 @@
+{
+    "name": "memory game",
+    "description": "이건 메모리 게임이다. 실행하면 게임이 시작된다.",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "icons": {
+        "16": "물.png",
+        "48": "물.png",
+        "128": "물.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "React Extension",
+        "default_icon": "물.png"
+    },
+    "permissions": ["storage"],
+    "options_page": "options.html",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["contentScript.js"]
+        }
+    ]
+}
